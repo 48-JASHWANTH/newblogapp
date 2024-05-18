@@ -1,0 +1,33 @@
+### User API requests
+### User registertion
+POST http://localhost:4000/userApi/newUser
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "userName":"jash1",
+    "password":"jash1",
+    "mail":"jash1@gmail.com"
+}
+
+### User login
+POST http://localhost:4000/userApi/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "userName":"jash",
+    "password":"jash"
+} 
+
+### Reading articles of all users
+GET http://localhost:4000/userApi/viewArticles
+
+### Write comment
+POST http://localhost:4000/userApi/comment/1709054246
+Content-Type: application/json
+
+{
+    "username":"ravi",
+    "comment":"some comment"
+}

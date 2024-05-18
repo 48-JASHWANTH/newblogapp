@@ -1,0 +1,88 @@
+### Author api requests
+### Author registeration
+POST http://localhost:4000/authorApi/newAuthor
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "userName":"jash",
+    "password":"jash",
+    "mail":"jash@gmail.com"
+}
+
+### Author login
+POST http://localhost:4000/authorApi/login
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "userName":"jash",
+    "password":"jash"
+}
+
+### Reading articles of author
+GET http://localhost:4000/authorApi/viewArticles/jash
+
+### Writing a article
+POST http://localhost:4000/authorApi/writeArticle
+Content-Type: application/json
+
+{
+   "articleId":"{{$timestamp}}",
+   "title":"Fundamentals of JS",
+   "category":"Programming",
+   "content":"JavaScript is the world's most popular programming language.JavaScript is the programming language of the Web.JavaScript is easy to learn.This tutorial will teach you JavaScript from basic to advanced.",
+   "dateOfCreation":"{{$datetime iso8601}}",
+   "dateOfModification":"{{$datetime iso8601}}",
+   "userName":"jash",
+   "comments":[],
+   "status":true
+}
+
+### Editing a article
+PUT http://localhost:4000/authorApi/modifyArticle
+Content-Type: application/json
+
+{
+   "articleId":"1709054246",
+   "title":"Fundamentals of JS",
+   "category":"Programming",
+   "content":"JavaScript is the world's most popular programming language.JavaScript is the programming.",
+   "dateOfCreation":"2024-02-27T17:17:26.602Z",
+   "dateOfModification":"{{$datetime iso8601}}",
+   "username":"Vikas",
+   "comments":[],
+   "status":true
+}
+### Deleting a article
+### Soft delete an article by article id
+PUT http://localhost:4000/authorApi/deleteArticle/1709051645
+Content-Type: application/json
+
+{
+   "articleId":"1709051645",
+   "title":"Fundamentals of JS",
+   "category":"Programming",
+   "content":"JavaScript is the world's most popular programming language.JavaScript is the programming.",
+   "dateOfCreation":"2024-02-27T16:34:05.736Z",
+   "dateOfModification":"{{$datetime iso8601}}",
+   "username":"Vikas",
+   "comments":[],
+   "status":"true"
+}
+
+### Admin api requests
+### Admin login
+POST http://localhost:4000/adminApi/login
+Content-Type: application/json
+
+{
+    "userType":"admin",
+    "adminName":"jash",
+    "password":"jash"
+}
+
+### Reading articles of all authors
+GET http://localhost:4000/adminApi/viewArticles
+
+
